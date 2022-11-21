@@ -1,0 +1,66 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "backend",
+  "sourceRoot": "packages/backend/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nxrocks/nx-spring-boot:build",
+      "options": {
+        "root": "packages/backend"
+      },
+      "dependsOn": [
+        "^install"
+      ],
+      "outputs": [
+        "packages/backend/build"
+      ]
+    },
+    "install": {
+      "executor": "@nxrocks/nx-spring-boot:install",
+      "options": {
+        "root": "packages/backend"
+      },
+      "outputs": [
+        "packages/backend/build"
+      ]
+    },
+    "test": {
+      "executor": "@nxrocks/nx-spring-boot:test",
+      "options": {
+        "root": "packages/backend"
+      }
+    },
+    "clean": {
+      "executor": "@nxrocks/nx-spring-boot:clean",
+      "options": {
+        "root": "packages/backend"
+      }
+    },
+    "run": {
+      "executor": "@nxrocks/nx-spring-boot:run",
+      "options": {
+        "root": "packages/backend"
+      }
+    },
+    "serve": {
+      "executor": "@nxrocks/nx-spring-boot:serve",
+      "options": {
+        "root": "packages/backend"
+      }
+    },
+    "build-image": {
+      "executor": "@nxrocks/nx-spring-boot:build-image",
+      "options": {
+        "root": "packages/backend"
+      }
+    },
+    "build-info": {
+      "executor": "@nxrocks/nx-spring-boot:build-info",
+      "options": {
+        "root": "packages/backend"
+      }
+    }
+  },
+  "tags": []
+}

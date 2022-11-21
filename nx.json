@@ -14,5 +14,8 @@
         "accessToken": "MGE5NWM4MmYtNzU4MS00MzE4LWJmMjEtNzZkZGI1ZmNjZmIxfHJlYWQtd3JpdGU="
       }
     }
-  }
+  },
+  "plugins": [
+    "@nxrocks/nx-spring-boot"
+  ]
 }
