@@ -1,0 +1,33 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "core-messages",
+  "projectType": "application",
+  "sourceRoot": "apps/core-messages/src",
+  "targets": {
+    "build": {
+      "executor": "@jnxplus/nx-boot-gradle:build",
+      "options": {
+        "packaging": "jar"
+      }
+    },
+    "build-image": {
+      "executor": "@jnxplus/nx-boot-gradle:build-image"
+    },
+    "serve": {
+      "executor": "@jnxplus/nx-boot-gradle:serve"
+    },
+    "lint": {
+      "executor": "@jnxplus/nx-boot-gradle:lint",
+      "options": {
+        "linter": "ktlint"
+      }
+    },
+    "test": {
+      "executor": "@jnxplus/nx-boot-gradle:test"
+    },
+    "kformat": {
+      "executor": "@jnxplus/nx-boot-gradle:kformat"
+    }
+  },
+  "tags": []
+}
