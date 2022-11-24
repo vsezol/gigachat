@@ -1,21 +1,16 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
+import fastify from 'fastify';
 
-import * as express from 'express';
-import * as path from 'path';
+const server = fastify();
 
-const app = express();
+server.get('/ping', async () => 'pong\n');
 
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+const port: number = Number(process.env.port) || 3333;
 
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to app-picture!' });
+server.listen({ port }, (err: Error, address: string) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
+
+  console.log(`Server listening at ${address}`);
 });
-
-const port = process.env.port || 3333;
-const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
-});
-server.on('error', console.error);
