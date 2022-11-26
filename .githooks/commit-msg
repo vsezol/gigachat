@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# regex to validate in commit msg
+commit_regex='^(feat|fix|build|chore|docs|style|refactor|perf|test)?(\(.+\))?!?: (.+[^.\r\n])([\r\n]+(.+[\r\n]+)+)?$'
+
+error_msg='[hooks/commit-msg]
+Aborting commit, try again with a valid message.
+We use a conventional commit message subject (https://www.conventionalcommits.org/en/v1.0.0)'
+
+if ! grep -iqE "$commit_regex" "$1"; then
+    echo "$error_msg" >&2
+    exit 1
+fi
