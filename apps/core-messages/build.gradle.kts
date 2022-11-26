@@ -5,7 +5,7 @@ val javaVersion: String by project
 plugins {
   id("org.springframework.boot")
   id("io.spring.dependency-management")
-  
+
   id("org.jetbrains.kotlin.jvm")
   id("org.jetbrains.kotlin.plugin.spring")
 }
@@ -23,7 +23,7 @@ dependencies {
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
   implementation("org.jetbrains.kotlin:kotlin-reflect")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-  
+
   testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
@@ -37,3 +37,5 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
   useJUnitPlatform()
 }
+
+buildDir = file("../../dist/apps/$name")
