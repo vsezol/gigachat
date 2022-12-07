@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gdamore/tcell/v2"
+	"github.com/rivo/tview"
+)
+
+var app = tview.NewApplication()
+
+var text = tview.NewTextView().
+    SetTextColor(tcell.ColorGreen).
+   	SetText("Volya, Vitya, Kostya - Good Friends")
 
 func main() {
-	fmt.Println("Hello, It is GIGACHAT client terminal")
+	if err := app.SetRoot(text, true).EnableMouse(true).Run(); err != nil {
+		panic(err)
+	}	
 }
