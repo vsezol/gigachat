@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "types": ["reflect-metadata"],  
+    "types": ["reflect-metadata"],
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@gigachat/protobuf-contracts": ["libs/protobuf-contracts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

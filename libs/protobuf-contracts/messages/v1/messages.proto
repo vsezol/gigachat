@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package messages.v1;
+
+message Message {
+  string id = 1;
+  string text = 2;
+}
+
+message CreateMessageInfo {
+  string text = 1;
+}
+
+message GetPaginatedMessagesRequest {
+  int32 skip = 1;
+  int32 take = 2;
+}
+message GetPaginatedMessagesResponse {
+  repeated Message items = 1;
+  int32 total = 2;
+}
+
+message GetMessagesStreamRequest {}
+message GetMessagesStreamResponse {
+  Message data = 1;
+};
+
+message SendMessageRequest {
+  CreateMessageInfo data = 1;
+}
+message SendMessageResponse {}
+
+service MessagesService {
+  rpc GetPaginatedMessages (GetPaginatedMessagesRequest) returns (GetPaginatedMessagesResponse) {}
+
+  rpc GetMessagesStream (GetMessagesStreamRequest) returns (stream GetMessagesStreamResponse) {}
+  
+  rpc SendMessage (SendMessageRequest) returns (SendMessageResponse) {}
+}
