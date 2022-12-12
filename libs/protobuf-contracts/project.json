@@ -1,0 +1,22 @@
+{
+  "name": "protobuf-contracts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/protobuf-contracts",
+  "projectType": "library",
+  "targets": {
+    "codegen": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./libs/protobuf-contracts",
+        "command": "buf generate"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "./libs/protobuf-contracts",
+        "command": "buf lint"
+      }
+    }
+  }
+}
